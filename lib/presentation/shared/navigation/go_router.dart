@@ -10,10 +10,13 @@ import 'route_constants.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
-GoRouter router() => GoRouter(
+GoRouter router({
+  String? initialLocation,
+}) =>
+    GoRouter(
       routerNeglect: true,
       navigatorKey: _rootNavigatorKey,
-      initialLocation: RouteConstants.splash.path,
+      initialLocation: initialLocation ?? RouteConstants.splash.path,
       errorBuilder: (context, state) {
         return const ErrorPage();
       },

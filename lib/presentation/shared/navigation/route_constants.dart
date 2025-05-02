@@ -6,7 +6,6 @@ class RouteItem {
 }
 
 class RouteConstants {
-
   static Set<String> unAuthRoutes = {
     RouteConstants.login.path,
     RouteConstants.signUp.path,

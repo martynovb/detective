@@ -1,3 +1,4 @@
+import 'package:detective/presentation/app/app_locators.dart';
 import 'package:detective/presentation/shared/navigation/route_constants.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class LoginPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
+      key: const Key(AppLocators.loginPage),
       body: Column(
         children: [
           Center(
@@ -21,7 +23,7 @@ class LoginPage extends ConsumerWidget {
             onPressed: () {
               context.go(RouteConstants.signUp.path);
             },
-            child: Text('go to home'),
+            child: Text('go to sign up'),
           ),
         ],
       ),

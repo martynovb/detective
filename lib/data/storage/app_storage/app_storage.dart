@@ -4,5 +4,4 @@ abstract class AppStorage {
   Future<bool> set(String key, value);
 
   Future<T?> get<T>(String key);
-
 }

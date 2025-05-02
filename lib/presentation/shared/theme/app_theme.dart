@@ -3,17 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/storage/app_storage/app_storage.dart';
-import '../../../domain/storage/providers.dart';
 import 'colors.gen.dart';
 import 'styles.dart';
 import 'text_theme.dart';
-
-final appThemeProvider = StateNotifierProvider<AppThemeModeNotifier, ThemeMode>(
-  (ref) {
-    final storage = ref.watch(appStorageProvider);
-    return AppThemeModeNotifier(storage);
-  },
-);
 
 class AppThemeModeNotifier extends StateNotifier<ThemeMode> {
   final AppStorage appStorage;
@@ -46,7 +38,7 @@ class AppTheme {
         primary: AppColors.primary,
         secondary: AppColors.lightGrey,
         error: AppColors.error,
-        background: AppColors.black,
+        surface: AppColors.black,
       ),
       // backgroundColor: AppColors.black,
       scaffoldBackgroundColor: AppColors.black,

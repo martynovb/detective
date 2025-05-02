@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../app/app_locators.dart';
+import '../../providers/feature_providers.dart';
 import '../../shared/navigation/route_constants.dart';
 
 class SplashPage extends ConsumerWidget {
@@ -9,19 +11,14 @@ class SplashPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen(splashDelayProvider, (_, __) {
+      context.go(RouteConstants.login.path);
+    });
     return Scaffold(
+      key: Key(AppLocators.splashPage),
       body: Center(
-          child: Column(
-        children: [
-          Text('Splash Page'),
-          ElevatedButton(
-            onPressed: () {
-              context.go(RouteConstants.login.path);
-            },
-            child: const Text('Go to Login'),
-          ),
-        ],
-      )),
+        child: Text('Splash Page'),
+      ),
     );
   }
 }
