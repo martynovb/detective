@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'app_storage.dart';
+import '../../../domain/storage/app_storage.dart';
 
-class AppStorageImpl implements AppStorage {
+class AppStorageLocal implements AppStorage {
   SharedPreferences? sharedPreferences;
 
   final Completer<SharedPreferences> _initCompleter =

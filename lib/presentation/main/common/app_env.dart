@@ -26,6 +26,10 @@ abstract class EnvInfo {
   static String get sentryDsn => const String.fromEnvironment(
         'sentryDsn',
       );
+
+  static String get redirectUrl => const String.fromEnvironment(
+        'redirectUrl',
+      );
 }
 
 extension _EnvProperties on AppEnvironment {

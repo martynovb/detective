@@ -1,4 +1,37 @@
 {
   "login": "Login",
-  "signUp": "Sign up"
+  "signUp": "Sign up",
+  "or": "or",
+  "continueWithGoogle": "Continue with Google",
+  "errors": {
+    "somethingWentWrong": "Something went wrong",
+    "signUpErrorEmailExists": "Email already exists",
+    "loginErrorInvalidCredentials": "Invalid login credentials"
+  },
+  "emailField": {
+    "label": "Email",
+    "placeholder": "Enter your email address",
+    "error": {
+      "empty": "Email cannot be empty",
+      "invalid": "Email is not valid",
+      "length": "Email length is not valid"
+    }
+  },
+  "passwordField": {
+    "label": "Password",
+    "placeholder": "Enter your password",
+    "error": {
+      "empty": "Password cannot be empty",
+      "invalid": "Password should contain at least one uppercase letter and one digit",
+      "length": "Password should be at least {} characters long"
+    }
+  },
+  "repeatPasswordField": {
+    "label": "Repeat Password",
+    "placeholder": "Repeat your password",
+    "error": {
+      "empty": "Repeat password cannot be empty",
+      "invalid": "Passwords do not match"
+    }
+  }
 }

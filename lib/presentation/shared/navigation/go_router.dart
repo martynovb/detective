@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../feature/auth/login_page.dart';
-import '../../feature/auth/sign_up_page.dart';
+import '../../feature/auth/login/login_page.dart';
+import '../../feature/auth/sign_up/sign_up_page.dart';
 import '../../feature/home/home_page.dart';
 import '../../feature/splash/splash_page.dart';
 import '../widgets/error_page.dart';
@@ -16,7 +16,7 @@ GoRouter router({
     GoRouter(
       routerNeglect: true,
       navigatorKey: _rootNavigatorKey,
-      initialLocation: initialLocation ?? RouteConstants.splash.path,
+      initialLocation: initialLocation ?? RouteConstants.signUp.path,
       errorBuilder: (context, state) {
         return const ErrorPage();
       },

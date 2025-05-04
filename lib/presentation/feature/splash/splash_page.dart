@@ -12,7 +12,7 @@ class SplashPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen(splashDelayProvider, (_, __) {
-      context.go(RouteConstants.login.path);
+      context.go(RouteConstants.signUp.path);
     });
     return Scaffold(
       key: Key(AppLocators.splashPage),

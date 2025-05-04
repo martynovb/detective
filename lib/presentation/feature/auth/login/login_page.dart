@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../shared/localization/locale_keys.g.dart';
+import '../../../shared/localization/locale_keys.g.dart';
 
 class LoginPage extends ConsumerWidget {
   const LoginPage({super.key});

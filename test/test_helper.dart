@@ -14,6 +14,11 @@ Future<void> buildTestWidget(
   List<Override> overrides = const [],
   Locale locale = const Locale('en'),
 }) async {
+  assert(
+    widget != null && initialLocation != null,
+    'Either widget or initialLocation must be provided',
+  );
+
   EasyLocalization.logger.enableBuildModes = [];
 
   await tester.pumpWidget(

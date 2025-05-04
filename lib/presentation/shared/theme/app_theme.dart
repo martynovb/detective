@@ -2,7 +2,7 @@ import 'package:detective/presentation/shared/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../data/storage/app_storage/app_storage.dart';
+import '../../../domain/storage/app_storage.dart';
 import 'colors.gen.dart';
 import 'styles.dart';
 import 'text_theme.dart';
@@ -36,11 +36,18 @@ class AppTheme {
       primaryColor: AppColors.primary,
       colorScheme: const ColorScheme.dark(
         primary: AppColors.primary,
-        secondary: AppColors.lightGrey,
+        secondary: AppColors.white,
         error: AppColors.error,
         surface: AppColors.black,
       ),
-      // backgroundColor: AppColors.black,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.lightGrey,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ),
+      ),
       scaffoldBackgroundColor: AppColors.black,
       textTheme: TextThemes.darkTextTheme,
       primaryTextTheme: TextThemes.primaryTextTheme,
@@ -61,8 +68,16 @@ class AppTheme {
       primaryTextTheme: TextThemes.primaryTextTheme,
       colorScheme: const ColorScheme.light(
         primary: AppColors.primary,
-        secondary: AppColors.lightGrey,
+        secondary: AppColors.black,
         error: AppColors.error,
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.lightGrey,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ),
       ),
       appBarTheme: const AppBarTheme(
         elevation: 0,
