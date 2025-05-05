@@ -1,3 +1,4 @@
+import 'package:detective/presentation/main/common/app_env.dart';
 import 'package:detective/presentation/providers/app_providers.dart';
 import 'package:detective/presentation/shared/globals.dart';
 import 'package:detective/presentation/shared/navigation/go_router.dart';
@@ -14,12 +15,8 @@ Future<void> buildTestWidget(
   List<Override> overrides = const [],
   Locale locale = const Locale('en'),
 }) async {
-  assert(
-    widget != null && initialLocation != null,
-    'Either widget or initialLocation must be provided',
-  );
-
   EasyLocalization.logger.enableBuildModes = [];
+  EnvInfo.initialize(AppEnvironment.local);
 
   await tester.pumpWidget(
     EasyLocalization(

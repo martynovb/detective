@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../shared/theme/colors.gen.dart';
+import '../theme/colors.gen.dart';
 import '../theme/dimensions.dart';
 
 class AppInputField extends StatefulWidget {

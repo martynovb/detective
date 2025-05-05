@@ -10,7 +10,9 @@ import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../providers/app_providers.dart';
 import '../../../providers/feature_providers.dart';
+import '../../../shared/widgets/buttons.dart';
 
 class SignUpPage extends HookConsumerWidget {
   const SignUpPage({super.key});
@@ -25,10 +27,15 @@ class SignUpPage extends HookConsumerWidget {
     ref.listen(
       signUpStateNotifierProvider.select((value) => value),
       ((previous, next) {
+        ref.watch(dialogsManagerProvider).showLoadingDialog(
+              showLoading: next.status.isInProgress,
+            );
+
         if (next.status.isFailure && next.errorMessage != null) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(next.errorMessage!)),
-          );
+          ref.watch(dialogsManagerProvider).showErrorDialog(
+                title: LocaleKeys.errors_errorTitle.tr(),
+                description: next.errorMessage,
+              );
         } else if (next.status.isSuccess) {
           context.go(RouteConstants.home.path);
         }
@@ -57,7 +64,7 @@ class SignUpPage extends HookConsumerWidget {
                 errorMessage: state.emailError?.errorMessage,
                 enableErrors: true,
               ),
-              AppSpacing.h8,
+              AppSpacing.h4,
               AppInputField(
                 showPasswordToggle: true,
                 inputKey: Key(AppLocators.passwordField),
@@ -68,7 +75,7 @@ class SignUpPage extends HookConsumerWidget {
                 errorMessage: state.passwordError?.errorMessage,
                 enableErrors: true,
               ),
-              AppSpacing.h8,
+              AppSpacing.h4,
               AppInputField(
                 showPasswordToggle: true,
                 inputKey: Key(AppLocators.repeatPasswordField),
@@ -79,7 +86,7 @@ class SignUpPage extends HookConsumerWidget {
                 errorMessage: state.repeatPasswordError?.errorMessage,
                 enableErrors: true,
               ),
-              AppSpacing.h8,
+              AppSpacing.h4,
               signUpButton(
                 ref,
                 emailController: emailController,
@@ -90,6 +97,17 @@ class SignUpPage extends HookConsumerWidget {
               Text(LocaleKeys.or).tr(),
               AppSpacing.h8,
               continueWithGoogleButton(ref),
+              AppSpacing.h8,
+              Divider(),
+              AppSpacing.h8,
+              InkWell(
+                key: Key(AppLocators.alreadyHaveAnAccountButton),
+                onTap: () => context.go(RouteConstants.login.path),
+                child: Text(
+                  LocaleKeys.alreadyHaveAnAccount.tr(),
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ),
               Spacer(flex: 2),
             ],
           ),
@@ -104,7 +122,8 @@ class SignUpPage extends HookConsumerWidget {
     required TextEditingController passwordController,
     required TextEditingController repeatPasswordController,
   }) {
-    return ElevatedButton(
+    return Buttons.simpleButton(
+      key: Key(AppLocators.signUpButton),
       onPressed: () {
         ref.read(signUpStateNotifierProvider.notifier).signUp(
               email: emailController.text,
@@ -112,16 +131,17 @@ class SignUpPage extends HookConsumerWidget {
               repeatPassword: repeatPasswordController.text,
             );
       },
-      child: const Text(LocaleKeys.signUp).tr(),
+      text: LocaleKeys.signUp.tr(),
     );
   }
 
   Widget continueWithGoogleButton(WidgetRef ref) {
-    return ElevatedButton(
+    return Buttons.simpleButton(
+      key: Key(AppLocators.continueWithGoogleButton),
       onPressed: () {
         ref.read(signUpStateNotifierProvider.notifier).continueWithGoogle();
       },
-      child: const Text(LocaleKeys.continueWithGoogle).tr(),
+      text: LocaleKeys.continueWithGoogle.tr(),
     );
   }
 }

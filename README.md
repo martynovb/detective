@@ -16,6 +16,7 @@ sentryDsn=
 
 - generate **freezed** files
 - generate **json** files
+- generate **colors** file
 
 ```sh
 fvm dart run build_runner build --delete-conflicting-outputs

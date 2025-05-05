@@ -8,14 +8,14 @@ import '../../feature/splash/splash_page.dart';
 import '../widgets/error_page.dart';
 import 'route_constants.dart';
 
-final _rootNavigatorKey = GlobalKey<NavigatorState>();
+final rootNavigatorKey = GlobalKey<NavigatorState>();
 
 GoRouter router({
   String? initialLocation,
 }) =>
     GoRouter(
       routerNeglect: true,
-      navigatorKey: _rootNavigatorKey,
+      navigatorKey: rootNavigatorKey,
       initialLocation: initialLocation ?? RouteConstants.signUp.path,
       errorBuilder: (context, state) {
         return const ErrorPage();

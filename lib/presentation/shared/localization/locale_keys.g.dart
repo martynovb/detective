@@ -7,6 +7,9 @@ abstract class  LocaleKeys {
   static const signUp = 'signUp';
   static const or = 'or';
   static const continueWithGoogle = 'continueWithGoogle';
+  static const alreadyHaveAnAccount = 'alreadyHaveAnAccount';
+  static const ok = 'ok';
+  static const errors_errorTitle = 'errors.errorTitle';
   static const errors_somethingWentWrong = 'errors.somethingWentWrong';
   static const errors_signUpErrorEmailExists = 'errors.signUpErrorEmailExists';
   static const errors_loginErrorInvalidCredentials = 'errors.loginErrorInvalidCredentials';

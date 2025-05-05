@@ -43,6 +43,9 @@ class AuthStorageFake extends AuthStorage {
 
   @override
   Future<void> signInWithGoogle() async {
+    await Future.delayed(const Duration(seconds: 2));
+    throw Exception('Fake sign up error');
+
     currentStatus = AuthenticationStatus.authenticated;
     currentUser = UserModel(id: '1', email: 'email@fake.com');
   }
@@ -50,6 +53,8 @@ class AuthStorageFake extends AuthStorage {
   @override
   Future<UserModel> signUpWithEmailAndPassword(
       {required String email, required String password}) async {
+    await Future.delayed(const Duration(seconds: 2));
+
     currentStatus = AuthenticationStatus.authenticated;
     currentUser = UserModel(id: '1', email: email);
     return currentUser!;

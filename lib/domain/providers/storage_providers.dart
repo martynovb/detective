@@ -15,7 +15,7 @@ final appStorageProvider = Provider((ref) {
 });
 
 final authStorageProvider = Provider<AuthStorage>((ref) {
-  return EnvInfo.environment == AppEnvironment.dev
+  return EnvInfo.environment == AppEnvironment.local
       ? AuthStorageFake()
       : AuthStorageSupabase(supabaseClient: Supabase.instance.client);
 });

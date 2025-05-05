@@ -13,5 +13,12 @@ class AppLocators {
   static const String repeatPasswordField = 'repeatPasswordField';
   static const String repeatPasswordFieldError = 'repeatPasswordFieldError';
 
+  // buttons
+  static const String signUpButton = 'signUpButton';
+  static const String continueWithGoogleButton = 'continueWithGoogleButton';
+  static const String alreadyHaveAnAccountButton = 'alreadyHaveAnAccountButton';
+
+  // dialogs
+  static const String loadingDialog = 'loadingDialog';
 
 }

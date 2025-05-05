@@ -3,7 +3,7 @@ import 'package:detective/presentation/shared/navigation/route_constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../../test_helper.dart';
+import '../../../test_helper.dart';
 
 void main() {
   testWidgets('LoginPage test', (WidgetTester tester) async {

@@ -8,6 +8,8 @@ class Dimensions {
   static const double menuDesktopHeight = 120;
   static const double menuMobileHeight = 64;
   static const double inputFieldErrorHeight = 20;
+
+  static const double dialogBorderRadius = 0;
 }
 
 class AppSpacing {

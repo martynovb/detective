@@ -1,4 +1,4 @@
-enum AppEnvironment { dev, staging, prod }
+enum AppEnvironment { local, dev, staging, prod }
 
 abstract class EnvInfo {
   static AppEnvironment _environment = AppEnvironment.dev;

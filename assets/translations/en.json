@@ -3,7 +3,10 @@
   "signUp": "Sign up",
   "or": "or",
   "continueWithGoogle": "Continue with Google",
+  "alreadyHaveAnAccount": "Already have an account?",
+  "ok": "Ok",
   "errors": {
+    "errorTitle": "Error",
     "somethingWentWrong": "Something went wrong",
     "signUpErrorEmailExists": "Email already exists",
     "loginErrorInvalidCredentials": "Invalid login credentials"
