@@ -100,4 +100,41 @@ class AuthStorageSupabase implements AuthStorage {
   @override
   Future<void> setSessionFromUri(Uri uri) =>
       supabaseClient.auth.getSessionFromUrl(uri);
+
+  @override
+  Future<UserModel> loginWithGoogle() async {
+    await supabaseClient.auth.signInWithOAuth(
+      OAuthProvider.google,
+      redirectTo: EnvInfo.redirectUrl,
+    );
+
+    final User? user = supabaseClient.auth.currentUser;
+
+    return UserModel.fromSupabaseUser(
+      {
+        'id': user?.id,
+        'email': user?.email,
+      },
+    );
+  }
+
+  @override
+  Future<UserModel> loginWithPassword({
+    required String email,
+    required String password,
+  }) async {
+    await supabaseClient.auth.signInWithPassword(
+      email: email,
+      password: password,
+    );
+
+    final User? user = supabaseClient.auth.currentUser;
+
+    return UserModel.fromSupabaseUser(
+      {
+        'id': user?.id,
+        'email': user?.email,
+      },
+    );
+  }
 }

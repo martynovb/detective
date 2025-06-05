@@ -59,4 +59,25 @@ class AuthStorageFake extends AuthStorage {
     currentUser = UserModel(id: '1', email: email);
     return currentUser!;
   }
+
+  @override
+  Future<UserModel> loginWithGoogle() async {
+    currentStatus = AuthenticationStatus.authenticated;
+
+    currentUser = UserModel(id: '1', email: 'email@fake.com');
+
+    return currentUser!;
+  }
+
+  @override
+  Future<UserModel> loginWithPassword({
+    required String email,
+    required String password,
+  }) async {
+    currentStatus = AuthenticationStatus.authenticated;
+
+    currentUser = UserModel(id: '1', email: email);
+
+    return currentUser!;
+  }
 }

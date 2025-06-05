@@ -7,6 +7,13 @@ abstract class AuthStorage {
 
   Future<AuthenticationStatus> getAuthStatus();
 
+  Future<UserModel> loginWithPassword({
+    required String email,
+    required String password,
+  });
+
+  Future<UserModel> loginWithGoogle();
+
   Future<UserModel> signInWithEmailAndPassword({
     required String email,
     required String password,

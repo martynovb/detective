@@ -17,6 +17,7 @@ class AppLocators {
   static const String signUpButton = 'signUpButton';
   static const String continueWithGoogleButton = 'continueWithGoogleButton';
   static const String alreadyHaveAnAccountButton = 'alreadyHaveAnAccountButton';
+  static const String loginButton = 'loginButton';
 
   // dialogs
   static const String loadingDialog = 'loadingDialog';
