@@ -13,9 +13,9 @@ class LoadingDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      key: Key(AppLocators.loadingDialog),
       backgroundColor: Colors.transparent,
       content: Column(
+        key: Key(AppLocators.loadingDialog),
         mainAxisSize: MainAxisSize.min,
         children: [
           CircularProgressIndicator(

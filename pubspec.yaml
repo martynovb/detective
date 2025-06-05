@@ -38,6 +38,7 @@ dev_dependencies:
   freezed: ^3.0.6
   json_serializable: ^6.9.5
   mocktail: ^1.0.4
+  state_notifier_test: ^0.0.10
 
 flutter_gen:
   output: lib/presentation/shared/theme/
